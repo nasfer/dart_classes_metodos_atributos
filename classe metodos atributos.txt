@@ -1,0 +1,44 @@
+void main(){
+  
+  print ('classes');
+ 
+  // instancie abaixo um objeto da classe qual construí
+   Celular celularDoWander = Celular('preto', 4, 5.7, 0.300);
+  Celular celularDoPedro = Celular('preto', 4, 5.7, 0.300);
+ 
+  // voce pode printar o valor que retorna do método toString
+  print(celularDoWander.toString());
+  print(celularDoPedro.toString());
+  
+  // printar valor retornado do método valorDoCelular
+  print(celularDoWander.valorDoCelular(1000));
+  print(celularDoPedro.valorDoCelular(5000));
+ 
+  
+}
+
+// essa classe é pública
+class Celular{
+  
+  //use o final para que voce possa atribuir um valor posteriormente e devido a ser null safety
+  final String cor;
+  final int qtdProcessador;
+  final double tamanho;
+  final double peso;
+  
+  //abaixo voce cria o construtor qual ela vai receber os valores posteriormente
+  Celular(this.cor, this.qtdProcessador, this.tamanho, this.peso); 
+  
+  //crie um método que retorna um valor, o método pode ser string, int entre outros
+  String toString(){
+    
+    return 'Cor: $cor, qtdProcessador: $qtdProcessador, tamanho: $tamanho, peso: $peso';
+  }
+  
+  // podemos criar um método double para calcular preço
+  
+  double valorDoCelular(double valor){
+    
+    return valor * qtdProcessador;
+  }
+}
